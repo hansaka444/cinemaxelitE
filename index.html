@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Core Tags -->
+<title>Cinemax Elite - Best Hollywood සිංහල Movies & KDrama Download</title>
+<meta name="description" content="Cinemax Elite වෙතින් අලුත්ම Hollywood, Bollywood, K-Drama, Sinhala චිත්‍රපට සහ TV Series. High quality downloads, subtitles සහ fast updates.">
+<meta name="keywords" content="cinemax elite, sinhala movies download, korean drama sinhala sub, hollywood movies">
+<meta name="author" content="Cinemax">
+<link rel="canonical" href="https://yourusername.github.io/cinemax/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourusername.github.io/cinemax/">
+<meta property="og:title" content="Cinemax Elite - Movies & Series Download">
+<meta property="og:description" content="අලුත්ම චිත්‍රපට, TV Series සහ K-Drama. Sinhala Subtitles එක්ක.">
+<meta property="og:image" content="https://yourusername.github.io/cinemax/og-image.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --red:#E50914;
+  --bg:#0f0f0f;
+  --bg2:#1a1a1a;
+  --bg3:#272727;
+  --bg4:#3d3d3d;
+  --t1:#ffffff;
+  --t2:#aaaaaa;
+  --t3:#717171;
+  --chip-bg:#272727;
+  --chip-active:#ffffff;
+  --chip-active-text:#0f0f0f;
+}
+html,body{background:var(--bg);color:var(--t1);font-family:'Roboto',sans-serif;min-height:100vh;overflow-x:hidden}
+
+/* TOPBAR */
+.topbar{position:sticky;top:0;z-index:99;background:linear-gradient(to bottom,rgba(15,15,15,.98) 0%,rgba(15,15,15,0) 100%);display:flex;align-items:center;padding:0 16px;height:56px;backdrop-filter:blur(10px)}
+.tb-logo{display:flex;align-items:center;gap:4px;flex:1}
+.tb-logo svg{width:34px;height:24px}
+.tb-logo-txt{font-size:18px;font-weight:900;letter-spacing:-.5px;color:var(--red)}
+.tb-icons{display:flex;align-items:center;gap:8px}
+.tb-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;cursor:pointer;color:var(--t1);transition:background.15s}
+.tb-icon:hover{background:var(--bg3)}
+.tb-icon svg{width:22px;height:22px}
+.tb-icon img{width:32px;height:32px;border-radius:50%;object-fit:cover}
+.user-avatar{width:32px;height:32px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+
+/* SEARCH OVERLAY */
+.search-overlay{display:none;position:fixed;inset:0;z-index:200;background:var(--bg)}
+.search-overlay.open{display:flex;flex-direction:column}
+.search-bar{display:flex;align-items:center;height:56px;padding:0 8px;gap:4px;border-bottom:1px solid var(--bg3)}
+.search-back{width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--t1);border-radius:50%}
+.search-back:hover{background:var(--bg3)}
+.search-back svg{width:22px;height:22px}
+.search-input-wrap{flex:1;background:var(--bg2);border-radius:24px;display:flex;align-items:center;padding:0 16px;height:40px;gap:10px}
+.search-input-wrap svg{color:var(--t2);flex-shrink:0;width:18px;height:18px}
+.search-input-wrap input{background:none;border:none;outline:none;color:var(--t1);font-size:15px;flex:1;width:100%}
+.search-input-wrap input::placeholder{color:var(--t3)}
+.search-results{flex:1;overflow-y:auto;padding:8px 0}
+.sr-item{display:flex;align-items:center;gap:16px;padding:10px 16px;cursor:pointer}
+.sr-item:active{background:var(--bg2)}
+.sr-icon{width:44px;height:44px;background:var(--bg3);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.sr-icon img{width:100%;height:100%;object-fit:cover}
+.sr-text{flex:1;min-width:0}
+.sr-title{font-size:14px;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sr-sub{font-size:12px;color:var(--t3);margin-top:2px}
+.sr-go{color:var(--t3)}
+.sr-go svg{width:18px;height:18px}
+
+/* HERO SLIDER */
+.hero-slider{position:relative;height:600px;overflow:hidden}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease-in-out}
+.hero-slide.active{opacity:1}
+.hero-bg{width:100%;height:100%;object-fit:cover;filter:brightness(.5)}
+.hero-gradient{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,transparent 50%,var(--bg) 100%)}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 20px 50px;z-index:2}
+.hero-badge{display:inline-block;padding:5px 12px;background:var(--red);border-radius:4px;font-size:11px;font-weight:700;margin-bottom:14px;letter-spacing:1.5px}
+.hero-title{font-size:52px;font-weight:900;line-height:1;margin-bottom:14px;text-shadow:0 4px 12px rgba(0,0,0,.9);max-width:600px}
+.hero-meta{display:flex;align-items:center;gap:14px;font-size:14px;color:var(--t2);margin-bottom:18px;flex-wrap:wrap}
+.hero-rating{display:flex;align-items:center;gap:5px;color:#FFD700;font-weight:700;font-size:15px}
+.hero-rating svg{width:18px;height:18px}
+.hero-plot{font-size:15px;line-height:1.7;color:var(--t2);max-width:650px;margin-bottom:24px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-shadow:0 2px 6px rgba(0,0,0,.8)}
+.hero-btns{display:flex;gap:12px}
+.btn-hero{padding:12px 28px;border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;border:none;display:flex;align-items:center;gap:10px;transition:all.2s}
+.btn-play{background:var(--t1);color:#000}
+.btn-play:hover{background:#e0e0e0;transform:scale(1.05)}
+.btn-info{background:rgba(109,109,110,0.7);color:var(--t1)}
+.btn-info:hover{background:rgba(109,109,110,0.9)}
+.btn-hero svg{width:22px;height:22px}
+.hero-dots{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:3}
+.hero-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:all.3s}
+.hero-dot.active{background:var(--t1);width:28px;border-radius:5px}
+
+/* CATEGORY CHIPS */
+.chips-wrap{overflow-x:auto;padding:18px 16px 14px;display:flex;gap:10px;scrollbar-width:none;position:sticky;top:56px;z-index:98;background:var(--bg)}
+.chips-wrap::-webkit-scrollbar{display:none}
+.chip{flex-shrink:0;padding:9px 18px;border-radius:24px;background:var(--chip-bg);color:var(--t1);font-size:14px;font-weight:600;cursor:pointer;border:none;white-space:nowrap;transition:all.15s;display:flex;align-items:center;gap:6px}
+.chip.on{background:var(--chip-active);color:var(--chip-active-text)}
+.chip:active{opacity:.7}
+
+/* SECTION */
+.section{padding:0 8px;margin-top:28px}
+.section-head{display:flex;align-items:center;justify-content:space-between;padding:0 16px 14px}
+.section-title{font-size:20px;font-weight:700}
+
+/* HORIZONTAL SCROLL */
+.hscroll{display:grid;grid-template-columns:repeat(auto-fill, minmax(110px, 1fr));gap:12px;padding:0 16px 8px;scrollbar-width:none;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+.hscroll::-webkit-scrollbar{display:none}
+.hcard{cursor:pointer;transition:transform.2s;position:relative}
+.hcard:hover{transform:scale(1.05);z-index:2}
+.hcard-poster{width:100%;height:165px;border-radius:6px;overflow:hidden;background:var(--bg3);position:relative;margin-bottom:6px}
+.hcard-poster img{width:100%;height:100%;object-fit:cover}
+.hcard-poster-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:32px}
+.hcard-rating{position:absolute;top:6px;right:6px;background:rgba(0,0,0,0.75);padding:2px 5px;border-radius:4px;font-size:10px;font-weight:700;color:#FFD700;display:flex;align-items:center;gap:2px;backdrop-filter:blur(4px)}
+.hcard-rating svg{width:10px;height:10px}
+.hcard-title{font-size:12px;font-weight:600;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.hcard-year{font-size:10px;color:var(--t3);margin-top:1px}
+
+/* DETAIL PAGE */
+.detail-hero{position:relative;min-height:450px}
+.detail-bg{width:100%;height:450px;object-fit:cover;filter:brightness(.3) blur(10px);transform:scale(1.1)}
+.detail-gradient{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,var(--bg) 95%)}
+.detail-content{position:relative;padding:20px 16px;margin-top:-250px}
+.detail-poster{width:200px;height:300px;border-radius:12px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.8);margin-bottom:20px;background:var(--bg3)}
+.detail-poster img{width:100%;height:100%;object-fit:cover}
+.detail-poster-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:60px;background:var(--bg3)}
+.detail-title{font-size:32px;font-weight:900;margin-bottom:10px}
+.detail-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px;font-size:14px;color:var(--t2)}
+.detail-rating{display:flex;align-items:center;gap:5px;color:#FFD700;font-weight:700}
+.detail-rating svg{width:18px;height:18px}
+.detail-plot{font-size:15px;line-height:1.8;color:var(--t2);margin-bottom:24px}
+.detail-info-grid{display:grid;grid-template-columns:auto 1fr;gap:14px 20px;font-size:14px;margin-bottom:24px}
+.detail-label{color:var(--t3);font-weight:600}
+.detail-value{color:var(--t1)}
+.genre-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.genre-tag{padding:8px 16px;background:var(--bg3);border-radius:20px;font-size:13px;font-weight:600}
+.back-btn{position:fixed;top:70px;left:16px;z-index:98;width:44px;height:44px;background:rgba(0,0,0,.7);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;color:var(--t1);backdrop-filter:blur(10px)}
+.back-btn:hover{background:rgba(0,0,0,.9)}
+.back-btn svg{width:24px;height:24px}
+
+/* PLAYER SECTION */
+.player-section {padding: 0 16px 20px;}
+.player-title {font-size: 18px;font-weight: 700;margin-bottom: 12px;display: flex;align-items: center;gap: 8px;}
+.player-title svg {width: 20px;height: 20px;color: var(--red);}
+.ep-list {display: flex;flex-direction: column;gap: 10px;margin-top: 10px;}
+.ep-card {background: var(--bg2);border-radius: 10px;padding: 14px 16px;display: flex;align-items: center;justify-content: space-between;border: 1px solid var(--bg3);gap: 10px;flex-wrap: wrap;}
+.ep-info {flex: 1;min-width: 0;}
+.ep-name {font-size: 14px;font-weight: 600;color: var(--t1);white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.ep-actions {display: flex;gap: 8px;flex-shrink: 0;flex-wrap: wrap;}
+.btn-action {padding: 8px 14px;border: none;border-radius: 6px;font-size: 12px;font-weight: 700;cursor: pointer;display: flex;align-items: center;gap: 4px;text-decoration: none;color: #fff;transition: opacity.15s;}
+.btn-action:hover {opacity:.85;}
+.btn-watch {background: var(--t1);color: #000;}
+.btn-download {background: var(--bg3);color: var(--t1);}
+.btn-whatsapp {background: #25D366;color: #fff;}
+.video-container {width: 100%;margin-top: 10px;background: #000;border-radius: 8px;overflow: hidden;display: none;}
+.video-container video {width: 100%;max-height: 450px;display: block;}
+
+/* LOADING */
+.spinner{width:32px;height:32px;border:3px solid var(--bg3);border-top-color:var(--red);border-radius:50%;animation:spin.8s linear infinite;margin:0 auto 12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.error-msg{padding:40px 16px;text-align:center;color:var(--t3)}
+.error-title{color:var(--red);font-weight:600;margin-bottom:8px;font-size:16px}
+
+/* BOTTOM NAV */
+.bnav{position:fixed;bottom:0;left:0;width:100%;background:var(--bg2);border-top:1px solid var(--bg3);display:flex;z-index:97;padding-bottom:env(safe-area-inset-bottom,0)}
+.bn{flex:1;display:flex;flex-direction:column;align-items:center;padding:8px 0 10px;cursor:pointer;color:var(--t3);text-decoration:none}
+.bn.on{color:var(--t1)}
+.bn svg{width:24px;height:24px;margin-bottom:3px}
+.bn span{font-size:10px;font-weight:500}
+.pb{height:80px}
+
+@media(min-width:768px){
+.hscroll{grid-template-columns:repeat(auto-fill, minmax(140px, 1fr))}
+.hcard-poster{height:210px}
+.hero-title{font-size:64px}
+.hero-slider{height:650px}
+.detail-content{display:flex;gap:40px;align-items:flex-start}
+.detail-poster{flex-shrink:0}
+.detail-info{flex:1}
+}
+@media(max-width:480px){
+.hero-slider{height:550px}
+.hero-title{font-size:38px}
+.hero-plot{-webkit-line-clamp:2}
+.hscroll{grid-template-columns:repeat(3, 1fr)}
+.hcard-poster{height:150px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="tb-logo">
+    <svg viewBox="0 0 34 24" fill="none">
+      <rect width="34" height="24" rx="5" fill="#E50914"/>
+      <path d="M13.5 7.5l8 4.5-8 4.5V7.5z" fill="white"/>
+    </svg>
+    <span class="tb-logo-txt">CINEMAX ELITE</span>
+  </div>
+  <div class="tb-icons">
+    <div class="tb-icon" onclick="openSearch()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35"/></svg>
+    </div>
+  </div>
+</div>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-bar">
+    <div class="search-back" onclick="closeSearch()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+    </div>
+    <div class="search-input-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35"/></svg>
+      <input type="text" id="searchInput" placeholder="Search movies, TV series..." onkeypress="if(event.key==='Enter')handleSearch(this.value)">
+    </div>
+  </div>
+  <div class="search-results" id="searchResults">
+    <div style="padding:40px 16px;text-align:center;color:var(--t3);font-size:14px">Search for movies or TV series</div>
+  </div>
+</div>
+
+<div id="page-home">
+  <div class="hero-slider" id="heroSlider">
+    <div style="height:600px;display:flex;align-items:center;justify-content:center">
+      <div class="spinner"></div>
+    </div>
+  </div>
+
+  <div class="chips-wrap">
+  <button class="chip on" onclick="filterCategory('all',this)">🔥 Trending</button>
+  <button class="chip" onclick="filterCategory('hollywood',this)">🎬 Hollywood</button>
+  <button class="chip" onclick="filterCategory('kdrama',this)">🇰🇷 K-Drama</button>
+  <button class="chip" onclick="filterCategory('bollywood',this)">🇮🇳 Bollywood</button>
+  <button class="chip" onclick="filterCategory('sinhala',this)">🇱🇰 Sinhala</button>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><div class="section-title">🔥 Trending Series</div></div>
+    <div class="hscroll" id="trendingSeries"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><div class="section-title">🎬 Hollywood Hits</div></div>
+    <div class="hscroll" id="hollywoodScroll"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><div class="section-title">🇰🇷 K-Drama Popular</div></div>
+    <div class="hscroll" id="kdramaScroll"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><div class="section-title">🇮🇳 Bollywood Movies</div></div>
+    <div class="hscroll" id="bollywoodScroll"></div>
+  </div>
+
+  <div class="pb"></div>
+</div>
+
+<div id="page-detail" style="display:none"></div>
+
+<div class="bnav">
+  <a class="bn on" href="#" onclick="goHome();return false">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="bn" href="#" onclick="openSearch();return false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35"/></svg>
+    <span>Search</span>
+  </a>
+</div>
+
+<script type="module">
+import { getOMDbDetails, getVideoLink, searchMovies, CATEGORIES } from './api.js';
+
+let currentHeroSlide = 0;
+let heroInterval;
+
+// ===== HERO SLIDER =====
+const HERO_SERIES_IDS = ['tt0241527','tt0295297','tt0304141','tt4633694','tt28212876','tt11198330'];
+
+async function buildHeroSlider() {
+  const slider = document.getElementById('heroSlider');
+  try {
+    const slides = await Promise.all(HERO_SERIES_IDS.map(id => getOMDbDetails(id)));
+    const validSlides = slides.filter(s => s);
+
+    if (validSlides.length === 0) {
+      slider.innerHTML = '<div class="error-msg"><div class="error-title">Failed to load</div>Check API connection</div>';
+      return;
+    }
+
+    slider.innerHTML = validSlides.map((movie, idx) => `
+      <div class="hero-slide ${idx === 0? 'active' : ''}">
+        <img src="${movie.Poster!== 'N/A'? movie.Poster : ''}" class="hero-bg" alt="${movie.Title}" onerror="this.style.display='none'">
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+          <div class="hero-badge">TRENDING NOW</div>
+          <h1 class="hero-title">${movie.Title}</h1>
+          <div class="hero-meta">
+            <span>${movie.Year}</span>
+            <span>${movie.Runtime}</span>
+            <span>${movie.Rated}</span>
+            <span class="hero-rating">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              ${movie.imdbRating}/10
+            </span>
+          </div>
+          <p class="hero-plot">${movie.Plot}</p>
+          <div class="hero-btns">
+            <button class="btn-hero btn-play" onclick="showMovieDetail('${movie.imdbID}')">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Play
+            </button>
+            <button class="btn-hero btn-info" onclick="showMovieDetail('${movie.imdbID}')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> More Info
+            </button>
+          </div>
+        </div>
+      </div>
+    `).join('') + `
+      <div class="hero-dots">
+        ${validSlides.map((_, idx) => `<div class="hero-dot ${idx === 0? 'active' : ''}" onclick="goToSlide(${idx})"></div>`).join('')}
+      </div>
+    `;
+
+    startHeroSlider();
+  } catch(e) {
+    slider.innerHTML = '<div class="error-msg"><div class="error-title">Error</div>'+e.message+'</div>';
+  }
+}
+
+function startHeroSlider() {
+  if (heroInterval) clearInterval(heroInterval);
+  heroInterval = setInterval(() => {
+    currentHeroSlide = (currentHeroSlide + 1) % HERO_SERIES_IDS.length;
+    showSlide(currentHeroSlide);
+  }, 5000);
+}
+
+function showSlide(index) {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  slides.forEach((s, i) => s.classList.toggle('active', i === index));
+  dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  currentHeroSlide = index;
+}
+
+function goToSlide(index) {
+  showSlide(index);
+  startHeroSlider();
+}
+window.goToSlide = goToSlide;
+
+// ===== LOAD CATEGORY =====
+async function loadCategory(category, containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  container.innerHTML = '<div style="padding:40px 16px;text-align:center;width:100%"><div class="spinner"></div>Loading...</div>';
+
+  try {
+    const ids = CATEGORIES[category] || [];
+    const movies = await Promise.all(ids.map(id => getOMDbDetails(id)));
+
+    container.innerHTML = movies.filter(m => m).map(movie => `
+      <div class="hcard" onclick="showMovieDetail('${movie.imdbID}')">
+        <div class="hcard-poster">
+          <img src="${movie.Poster!== 'N/A'? movie.Poster : ''}" alt="${movie.Title}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="hcard-poster-fallback" style="display:none">🎬</div>
+          <div class="hcard-rating">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            ${movie.imdbRating!== 'N/A'? movie.imdbRating : 'N/A'}
+          </div>
+        </div>
+        <div class="hcard-title">${movie.Title}</div>
+        <div class="hcard-year">${movie.Year}</div>
+      </div>
+    `).join('');
+  } catch(e) {
+    container.innerHTML = '<div class="error-msg">Failed to load</div>';
+  }
+}
+
+function filterCategory(cat, el) {
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+  el.classList.add('on');
+  if (cat === 'all') window.scrollTo({top: 0, behavior: 'smooth'});
+}
+window.filterCategory = filterCategory;
+
+// ===== SEARCH =====
+async function handleSearch(val) {
+  const res = document.getElementById('searchResults');
+  if (!val.trim()) {
+    res.innerHTML = '<div style="padding:40px 16px;text-align:center;color:var(--t3);font-size:14px">Search for movies or TV series</div>';
+    return;
+  }
+
+  res.innerHTML = '<div style="padding:40px 16px;text-align:center;color:var(--t2)"><div class="spinner"></div>Searching...</div>';
+
+  const results = await searchMovies(val);
+  if (results && results.length > 0) {
+    res.innerHTML = results.slice(0, 10).map(m => `
+      <div class="sr-item" onclick="showMovieDetailFromSearch('${m.title}')">
+        <div class="sr-icon"><img src="${m.image || ''}" alt="" onerror="this.style.display='none'"></div>
+        <div class="sr-text">
+          <div class="sr-title">${m.title}</div>
+          <div class="sr-sub">${m.rating || 'N/A'}</div>
+        </div>
+        <div class="sr-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+    `).join('');
+  } else {
+    res.innerHTML = '<div style="padding:40px 16px;text-align:center;color:var(--t3);font-size:14px">No results found</div>';
+  }
+}
+window.handleSearch = handleSearch;
+
+async function showMovieDetailFromSearch(title) {
+  const res = await fetch(`http://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=7a316873`);
+  const data = await res.json();
+  if (data.Response === 'True') {
+    showMovieDetail(data.imdbID);
+  }
+}
+window.showMovieDetailFromSearch = showMovieDetailFromSearch;
+
+// ===== MOVIE DETAIL PAGE =====
+async function showMovieDetail(imdbID) {
+  closeSearch();
+  const homePage = document.getElementById('page-home');
+  const detailPage = document.getElementById('page-detail');
+
+  homePage.style.display = 'none';
+  detailPage.style.display = 'block';
+  detailPage.dataset.imdbid = imdbID;
+  detailPage.innerHTML = '<div style="padding:100px 16px;text-align:center"><div class="spinner"></div>Loading...</div>';
+  window.scrollTo(0,0);
+
+  const data = await getOMDbDetails(imdbID);
+  if (!data) {
+    detailPage.innerHTML = '<div style="padding:100px 16px;text-align:center;color:var(--red)">Movie not found</div>';
+    return;
+  }
+
+  const poster = data.Poster!== 'N/A'? data.Poster : '';
+  const genres = data.Genre? data.Genre.split(', ') : [];
+  const isSeriesType = data.Type === 'series';
+
+  detailPage.innerHTML = `
+    <button class="back-btn" onclick="goHome()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <div class="detail-hero">
+      <img src="${poster}" class="detail-bg" alt="" onerror="this.style.display='none'">
+      <div class="detail-gradient"></div>
+    </div>
+    <div class="detail-content">
+      <div class="detail-poster">
+        <img src="${poster}" alt="${data.Title}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="detail-poster-fallback" style="display:none">🎬</div>
+      </div>
+      <div class="detail-info">
+        <h1 class="detail-title">${data.Title}</h1>
+        <div class="detail-meta">
+          <span>${data.Year}</span>
+          <span>${data.Runtime}</span>
+          <span>${data.Rated}</span>
+          ${data.imdbRating!== 'N/A'? `
+            <span class="detail-rating">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              ${data.imdbRating}/10
+            </span>
+          ` : ''}
+        </div>
+        <p class="detail-plot">${data.Plot}</p>
+        <div class="genre-tags">${genres.map(g => `<span class="genre-tag">${g}</span>`).join('')}</div>
+        <div class="detail-info-grid">
+          <span class="detail-label">Director</span><span class="detail-value">${data.Director}</span>
+          <span class="detail-label">Actors</span><span class="detail-value">${data.Actors}</span>
+          <span class="detail-label">Language</span><span class="detail-value">${data.Language}</span>
+          <span class="detail-label">Country</span><span class="detail-value">${data.Country}</span>
+          ${data.Awards!== 'N/A' && data.Awards? `<span class="detail-label">Awards</span><span class="detail-value">${data.Awards}</span>` : ''}
+        </div>
+      </div>
+    </div>
+    <div class="player-section">
+      <div class="player-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        ${isSeriesType? 'Watch Episodes' : 'Watch & Download'}
+      </div>
+      <div id="subs-container"></div>
+    </div>
+    <div class="pb"></div>
+  `;
+
+  await buildVideoSection(data);
+}
+window.showMovieDetail = showMovieDetail;
+
+// ===== VIDEO SECTION =====
+async function buildVideoSection(movieData) {
+  const container = document.getElementById('subs-container');
+  if (!container) return;
+
+  const imdbID = movieData.imdbID;
+  const isSeries = movieData.Type === 'series';
+
+  const videoData = await getVideoLink(imdbID);
+
+  if (isSeries) {
+    container.innerHTML = renderSubsEmpty('Series episode list coming soon. Check API for updates.');
+  } else {
+    if (videoData) {
+      container.innerHTML = `
+        <div class="ep-list">
+          <div class="ep-card">
+            <div class="ep-info">
+              <div class="ep-name">${videoData.name} - Full Movie</div>
+            </div>
+                        <div class="ep-actions">
+              <button class="btn-action btn-watch" onclick="playEpisode('${videoData.videoUrl}', '${videoData.subtitleUrl || ''}')">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Watch
+              </button>
+              <a class="btn-action btn-download" href="${videoData.videoUrl}" download target="_blank">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download
+              </a>
+              ${videoData.whatsappDownloadUrl? `<a class="btn-action btn-whatsapp" href="${videoData.whatsappDownloadUrl}" target="_blank">🟢 WhatsApp</a>` : ''}
+            </div>
+          <div class="video-container" id="video-player-movie-${imdbID}">
+            <video controls controlsList="nodownload">
+              <source src="${videoData.videoUrl}" type="video/mp4">
+              ${videoData.subtitleUrl? `<track src="${videoData.subtitleUrl}" kind="subtitles" srclang="si" label="Sinhala" default>` : ''}
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      `;
+    } else {
+      container.innerHTML = renderSubsEmpty('Video not available yet.');
+    }
+  }
+}
+
+window.playEpisode = function(videoUrl, subtitleUrl) {
+  document.querySelectorAll('.video-container').forEach(el => {
+    el.style.display = 'none';
+    const video = el.querySelector('video');
+    if (video) video.pause();
+  });
+
+  const player = document.querySelector('.video-container');
+  if (player) {
+    player.style.display = 'block';
+    const video = player.querySelector('video');
+    if (video) {
+      video.load();
+      video.play();
+    }
+  }
+};
+
+function renderSubsEmpty(msg) {
+  return `
+    <div class="subs-empty">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 15l3-4 2 2.5 2-3 3 4.5"/></svg></div>
+      <div>${msg}</div>
+    </div>
+  `;
+}
+
+// ===== NAVIGATION =====
+function openSearch() {
+  document.getElementById('searchOverlay').classList.add('open');
+  setTimeout(() => document.getElementById('searchInput').focus(), 100);
+}
+window.openSearch = openSearch;
+
+function closeSearch() {
+  document.getElementById('searchOverlay').classList.remove('open');
+  document.getElementById('searchInput').value = '';
+  document.getElementById('searchResults').innerHTML = '<div style="padding:40px 16px;text-align:center;color:var(--t3);font-size:14px">Search for movies or TV series</div>';
+}
+window.closeSearch = closeSearch;
+
+function goHome() {
+  document.getElementById('page-home').style.display = 'block';
+  document.getElementById('page-detail').style.display = 'none';
+  window.scrollTo(0, 0);
+}
+window.goHome = goHome;
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', async () => {
+  await buildHeroSlider();
+  await loadCategory('trending', 'trendingSeries');
+  await loadCategory('hollywood', 'hollywoodScroll');
+  await loadCategory('kdrama', 'kdramaScroll');
+  await loadCategory('bollywood', 'bollywoodScroll');
+});
+</script>
+
+</body>
+</html>
